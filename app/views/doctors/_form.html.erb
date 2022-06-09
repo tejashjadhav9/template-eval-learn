@@ -1,0 +1,18 @@
+<%= form_with model: @doctor do |form| %>
+<div>
+    <%= form.label :id %><br>
+    <%= form.text_field :id %>
+    <% @doctor.errors.full_messages_for(:id).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+
+  <div>
+    <%= form.label :name%><br>
+    <%= form.text_field :name %>
+    <% @doctor.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+<div>
+ <%= form.submit %>
+  </div>
+<% end %>

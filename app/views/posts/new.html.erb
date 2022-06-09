@@ -1,0 +1,26 @@
+<p>enter the id according to user</p>
+<%@users.each do |u|%>
+<li>
+<%=u.id%>---<%=u.name%>
+<%end%>
+
+
+<%= form_with model: @post do |form| %>
+
+<div>
+    <%= form.label :user_id %><br>
+    <%= form.text_field :user_id %>
+    <% @post.errors.full_messages_for(:user_id).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+
+  <div>
+    <%= form.label :post %><br>
+    <%= form.text_field :post %>
+    <% @post.errors.full_messages_for(:post).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+<div>
+ <%= form.submit %>
+  </div>
+<% end %>

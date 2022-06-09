@@ -1,0 +1,7 @@
+
+<%@post.each do |u|%>
+<li>
+<%=u.post%>
+<%end%>
+</li>
+<%= link_to "post", new_post_path(@post) %>

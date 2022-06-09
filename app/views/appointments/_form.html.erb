@@ -1,0 +1,31 @@
+<%= form_with model: @appointment do |form| %>
+<div>
+    <%= form.label :date %><br>
+    <%= form.text_field :date %>
+    <% @appointment.errors.full_messages_for(:date).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+
+  <div>
+    <%= form.label :doctor_id %><br>
+    <%= form.text_field :doctor_id %>
+    <% @appointment.errors.full_messages_for(:doctor_id).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+    <div>
+    <%= form.label :patient_id %><br>
+    <%= form.text_field :patient_id %>
+    <% @appointment.errors.full_messages_for(:patient_id).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+    <div>
+    <%= form.label :desc %><br>
+    <%= form.text_field :desc %>
+    <% @appointment.errors.full_messages_for(:desc).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+    
+<div>
+ <%= form.submit %>
+  </div>
+<% end %>

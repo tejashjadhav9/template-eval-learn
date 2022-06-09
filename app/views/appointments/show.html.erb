@@ -1,0 +1,12 @@
+<h1>date - <%= @appointment.date %></h1>
+
+<p>Name - <%= @appointment.doctor_id %></p>
+
+<p>Email - <%= @appointment.patient_id %></p>
+
+<p>Email - <%= @appointment.desc %></p>
+
+<%= link_to "edit", edit_appointment_path %>
+<%= link_to "Destroy" ,appointment_path, data:{turbo_method: :delete ,turbo_confirm: "Are you sure?"} %>
+<%= link_to "Homepage" ,root_path %>
+
